@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script type="text/javascript">
+        function userLanguage(){
+            let userLang = navigator.language; 
+            switch (true) {
+                case userLang == "it-IT":
+                    window.location.href = 'it/index.html';
+                    break;
+                case userLang == "en-EN":
+                    window.location.href = 'en/index.html';
+                    break;
+                case userLang != "en-EN" || userLang != "it-IT" :
+                    window.alert("Your language is not available- La tua lingua non è disponibile");
+                    document.body.innerHTML = '<a href="it/index.html" style="text-decoration: none; a:visited {background-color: blue;}" >Italian page</a> <br/><a href="en/index.html" style="text-decoration: none; a:visited {background-color: blue;}">English page</a>';
+                    break;
+                default:
+                window.alert("Browser language not found - Lingua del browser non trovata");
+                document.body.innerHTML = '<a href="it/index.html" style="text-decoration: none; a:visited {background-color: blue;}" >Italian page</a> <br/><a href="en/index.html" style="text-decoration: none; a:visited {background-color: blue;}">English page</a>';
+            }
+        }
+    </script>
+</head>
+<body onload="userLanguage()">
+</body>
+</html>
